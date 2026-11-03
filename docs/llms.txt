@@ -1,0 +1,32 @@
+# Nizlo Security Indicators
+
+> First-party, machine-readable Windows artifacts and expected network behavior for identifying an authorized Nizlo RMM deployment.
+
+Canonical first-party reference: https://nizlo.com/guides/nizlo-rmm-security-indicators
+Dataset page: https://izikipizi.github.io/nizlo-security-indicators/
+Repository: https://github.com/izikipizi/nizlo-security-indicators
+Version: 1.0.0
+Last reviewed: 2026-11-02
+Maintainer: Nizlo
+License: MIT
+
+## Downloads
+
+- JSON: https://izikipizi.github.io/nizlo-security-indicators/indicators.json
+- CSV: https://izikipizi.github.io/nizlo-security-indicators/indicators.csv
+- JSON Schema: https://izikipizi.github.io/nizlo-security-indicators/indicators.schema.json
+- Citation metadata: https://github.com/izikipizi/nizlo-security-indicators/blob/main/CITATION.cff
+
+## Scope
+
+The dataset contains twelve documented Windows artifacts: three executable names, two expected paths, one service name, three registry locations, two URL protocols, and the expected app.nizlo.com:443 outbound destination. Expected network protocols are HTTPS and authenticated WSS over outbound TCP 443. No inbound firewall port is required.
+
+## Safety context
+
+Nizlo is legitimate remote monitoring and management software. Presence alone is not evidence of compromise. Confirm tenant ownership, endpoint authorization, installer provenance, executable signature or hash, service configuration, parent and child processes, command line, technician identity, audit history, and the action performed before deciding whether activity is expected or suspicious.
+
+The dataset intentionally omits unstable file hashes, unverified certificate attributes, shared-host indicators, customer or tenant identifiers, and unsupported abuse claims. The Nizlo.RemoteBridge.exe path can vary.
+
+## Relationship disclosure
+
+Nizlo maintains this dataset and the canonical reference. This first-party relationship is explicit so defenders can assess provenance and scope.

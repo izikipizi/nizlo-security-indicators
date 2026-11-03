@@ -7,6 +7,7 @@ First-party, machine-readable Windows artifacts and expected network behavior fo
 - [JSON download](https://izikipizi.github.io/nizlo-security-indicators/indicators.json)
 - [CSV download](https://izikipizi.github.io/nizlo-security-indicators/indicators.csv)
 - [JSON Schema](https://izikipizi.github.io/nizlo-security-indicators/indicators.schema.json)
+- [LLM-readable summary](https://izikipizi.github.io/nizlo-security-indicators/llms.txt)
 
 ## Important context
 

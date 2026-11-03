@@ -54,7 +54,7 @@ function parseCsv(text) {
   return rows;
 }
 
-const [jsonText, csvText, schemaText, page, docsJson, docsCsv, docsSchema, sitemap] =
+const [jsonText, csvText, schemaText, page, docsJson, docsCsv, docsSchema, sitemap, llms] =
   await Promise.all([
     readFile("indicators.json", "utf8"),
     readFile("indicators.csv", "utf8"),
@@ -64,6 +64,7 @@ const [jsonText, csvText, schemaText, page, docsJson, docsCsv, docsSchema, sitem
     readFile("docs/indicators.csv", "utf8"),
     readFile("docs/indicators.schema.json", "utf8"),
     readFile("docs/sitemap.xml", "utf8"),
+    readFile("docs/llms.txt", "utf8"),
   ]);
 
 const data = JSON.parse(jsonText);
@@ -108,5 +109,14 @@ for (const required of [
   assert.ok(page.includes(required), `docs/index.html is missing ${required}`);
 }
 assert.ok(sitemap.includes("https://izikipizi.github.io/nizlo-security-indicators/"));
+for (const required of [
+  "# Nizlo Security Indicators",
+  source,
+  "indicators.json",
+  "indicators.csv",
+  "Presence alone is not evidence of compromise",
+]) {
+  assert.ok(llms.includes(required), `docs/llms.txt is missing ${required}`);
+}
 
 console.log(`Validated ${data.artifacts.length} Nizlo indicators across JSON, CSV, schema, and GitHub Pages.`);
