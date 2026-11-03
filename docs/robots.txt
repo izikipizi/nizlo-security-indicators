@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://izikipizi.github.io/nizlo-security-indicators/sitemap.xml

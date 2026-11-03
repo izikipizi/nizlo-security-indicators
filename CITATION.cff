@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this dataset, cite the repository release and the first-party Nizlo security-indicator reference."
+title: "Nizlo Security Indicators"
+type: dataset
+version: 1.0.0
+date-released: 2026-11-02
+authors:
+  - family-names: Ecklund
+    given-names: Kip
+publisher:
+  name: Nizlo
+repository-code: "https://github.com/izikipizi/nizlo-security-indicators"
+url: "https://izikipizi.github.io/nizlo-security-indicators/"
+license: MIT
+keywords:
+  - Nizlo
+  - RMM
+  - Windows
+  - security indicators
+  - threat hunting
+  - incident response

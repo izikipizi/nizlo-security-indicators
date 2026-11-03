@@ -1,0 +1,13 @@
+type,value,platform,context,source,last_reviewed
+executable,Nizlo.Agent.exe,Windows,"Primary Windows agent executable; normally under the Nizlo agent installation directory.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+executable,Nizlo.Agent.Updater.exe,Windows,"Windows agent updater executable; normally under the Nizlo agent installation directory.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+executable,Nizlo.RemoteBridge.exe,Windows,"Remote bridge executable. Its path can vary; correlate with signer, parent process, command line, authorization, and surrounding activity.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+path,C:\Program Files\Nizlo\Agent\,Windows,"Expected Windows agent installation directory containing installed binaries.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+path,C:\ProgramData\Nizlo\Agent\,Windows,"Expected Windows agent data directory containing service state and update working data.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+service,Nizlo RMM Agent,Windows,"Automatic Windows service running as LocalSystem.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+registry,HKLM\Software\Nizlo\Agent,Windows,"Nizlo Windows agent registry location.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+registry,HKLM\Software\Classes\nizlo,Windows,"Registration for the nizlo URL protocol handler.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+registry,HKLM\Software\Classes\nizlo-remote,Windows,"Registration for the nizlo-remote URL protocol handler.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+protocol,nizlo:,Windows,"Approved console-to-client URL protocol. Review the registered command, binary path, user action, and authorization trail.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+protocol,nizlo-remote:,Windows,"Approved remote console-to-client URL protocol. Review the registered command, binary path, user action, and authorization trail.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+network,app.nizlo.com:443,Windows,"Expected outbound TCP 443 destination using HTTPS or authenticated WSS. No inbound firewall port is required.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02

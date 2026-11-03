@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Nizlo RMM Security Indicators for Windows — JSON and CSV</title>
+  <meta name="description" content="Download first-party JSON and CSV indicators for Nizlo RMM Windows executables, paths, service, registry keys, URL protocols, and expected network behavior." />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <link rel="canonical" href="https://izikipizi.github.io/nizlo-security-indicators/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Nizlo RMM Security Indicators for Windows" />
+  <meta property="og:description" content="First-party, machine-readable JSON and CSV for authorized defensive identification and investigation." />
+  <meta property="og:url" content="https://izikipizi.github.io/nizlo-security-indicators/" />
+  <meta property="og:image" content="https://nizlo.com/opengraph-image" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#07171d" />
+  <script type="application/ld+json">{
+    "@context":"https://schema.org",
+    "@type":"Dataset",
+    "name":"Nizlo RMM security indicators for Windows",
+    "description":"First-party Windows artifacts and expected network behavior for identifying an authorized Nizlo RMM deployment.",
+    "url":"https://izikipizi.github.io/nizlo-security-indicators/",
+    "isBasedOn":"https://nizlo.com/guides/nizlo-rmm-security-indicators",
+    "creator":{"@type":"Organization","name":"Nizlo","url":"https://nizlo.com/"},
+    "datePublished":"2026-11-02",
+    "dateModified":"2026-11-02",
+    "version":"1.0.0",
+    "license":"https://opensource.org/license/mit",
+    "isAccessibleForFree":true,
+    "keywords":["Nizlo","RMM","Windows security indicators","threat hunting","incident response","endpoint management"],
+    "distribution":[
+      {"@type":"DataDownload","contentUrl":"https://izikipizi.github.io/nizlo-security-indicators/indicators.json","encodingFormat":"application/json"},
+      {"@type":"DataDownload","contentUrl":"https://izikipizi.github.io/nizlo-security-indicators/indicators.csv","encodingFormat":"text/csv"}
+    ]
+  }</script>
+  <style>
+    :root{color-scheme:dark;--bg:#06141a;--panel:#0b222b;--line:#21424c;--text:#edf8fa;--muted:#abc2c8;--teal:#1dc6c7;--ink:#03282d;--warn:#ffd989}*{box-sizing:border-box}body{margin:0;color:var(--text);background:radial-gradient(circle at 82% 0,rgba(29,198,199,.18),transparent 32rem),var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}a{color:inherit}a:focus-visible{outline:3px solid #8be7e4;outline-offset:4px}.wrap{width:min(1080px,calc(100% - 2rem));margin:auto}header{padding:1.1rem 0;border-bottom:1px solid rgba(139,231,228,.13)}nav{display:flex;justify-content:space-between;align-items:center;gap:1rem}.brand{display:flex;align-items:center;gap:.7rem;font-weight:850;text-decoration:none}.mark{display:grid;place-items:center;width:2rem;height:2rem;border-radius:.65rem;background:var(--teal);color:var(--ink)}main{padding:5rem 0 4rem}.eyebrow{color:#8be7e4;font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}h1{max-width:900px;margin:.65rem 0 1rem;font-size:clamp(2.65rem,7vw,5.4rem);line-height:.96;letter-spacing:-.055em}.lede{max-width:820px;margin:0;color:var(--muted);font-size:1.15rem}.actions{display:flex;flex-wrap:wrap;gap:.75rem;margin:2rem 0 3rem}.button{display:inline-flex;padding:.8rem 1.05rem;border-radius:.72rem;border:1px solid var(--line);text-decoration:none;font-weight:800}.primary{background:var(--teal);color:var(--ink);border-color:var(--teal)}.notice{margin:2rem 0;padding:1.3rem 1.45rem;border:1px solid rgba(255,217,137,.45);border-radius:1rem;background:rgba(255,217,137,.08);color:#ffe8b7}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;margin-top:2rem}.card{padding:1.5rem;border:1px solid var(--line);border-radius:1.1rem;background:linear-gradient(145deg,rgba(14,41,50,.95),rgba(8,28,35,.96))}.card h2{margin:.1rem 0 .75rem;font-size:1.35rem}.card code{display:block;overflow-wrap:anywhere;margin:.45rem 0;padding:.55rem .7rem;border-radius:.55rem;background:rgba(255,255,255,.055);color:#d9fbfa}.context{margin-top:2rem;padding:1.5rem;border-left:4px solid var(--teal);background:var(--panel);color:var(--muted)}footer{display:flex;justify-content:space-between;gap:1rem;padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}@media(max-width:720px){main{padding-top:3.5rem}.grid{grid-template-columns:1fr}footer{flex-direction:column}}
+  </style>
+</head>
+<body>
+  <header><nav class="wrap"><a class="brand" href="./"><span class="mark">N</span><span>Nizlo Security Indicators</span></a><a href="https://github.com/izikipizi/nizlo-security-indicators">Source repository</a></nav></header>
+  <main class="wrap">
+    <p class="eyebrow">First-party dataset · Version 1.0.0 · No signup</p>
+    <h1>Nizlo RMM security indicators for Windows</h1>
+    <p class="lede">Download machine-readable artifacts for identifying an expected Nizlo deployment and investigating unexpected activity with the right authorization and process context.</p>
+    <div class="actions"><a class="button primary" href="indicators.json" download>Download JSON</a><a class="button" href="indicators.csv" download>Download CSV</a><a class="button" href="indicators.schema.json">View JSON Schema</a><a class="button" href="https://nizlo.com/guides/nizlo-rmm-security-indicators?utm_source=github_pages&amp;utm_medium=security_dataset&amp;utm_campaign=nizlo_indicators">Read the full reference</a></div>
+    <div class="notice"><strong>Presence alone is not evidence of compromise.</strong> Nizlo is legitimate RMM software. Confirm tenant ownership, endpoint authorization, installer provenance, operator identity, audit history, and the action performed.</div>
+    <section class="grid" aria-label="Nizlo Windows security indicators">
+      <article class="card"><h2>Executables</h2><code>Nizlo.Agent.exe</code><code>Nizlo.Agent.Updater.exe</code><code>Nizlo.RemoteBridge.exe</code></article>
+      <article class="card"><h2>Windows paths</h2><code>C:\Program Files\Nizlo\Agent\</code><code>C:\ProgramData\Nizlo\Agent\</code></article>
+      <article class="card"><h2>Service</h2><code>Nizlo RMM Agent</code><p>Automatic Windows service running as LocalSystem.</p></article>
+      <article class="card"><h2>Registry and protocols</h2><code>HKLM\Software\Nizlo\Agent</code><code>HKLM\Software\Classes\nizlo</code><code>HKLM\Software\Classes\nizlo-remote</code><code>nizlo:</code><code>nizlo-remote:</code></article>
+      <article class="card"><h2>Expected network behavior</h2><code>app.nizlo.com:443</code><p>Outbound TCP 443 using HTTPS or authenticated WSS. No inbound firewall port is required.</p></article>
+      <article class="card"><h2>Investigation scope</h2><p>Correlate paths and names with signer or hash, parent and child processes, command line, technician identity, tickets or change windows, and the authorized tenant.</p></article>
+    </section>
+    <aside class="context"><strong>Relationship disclosure:</strong> Nizlo maintains this dataset. It intentionally excludes unstable hashes, unverified certificate attributes, shared-host indicators, and unsupported abuse claims. The canonical first-party source is the <a href="https://nizlo.com/guides/nizlo-rmm-security-indicators">Nizlo RMM security-indicator guide</a>.</aside>
+  </main>
+  <footer class="wrap"><span>Maintained by Nizlo · Last reviewed November 2, 2026</span><span><a href="https://github.com/izikipizi/nizlo-security-indicators/releases/tag/v1.0.0">Version 1.0.0</a> · <a href="https://github.com/izikipizi/nizlo-security-indicators/blob/main/LICENSE">MIT License</a></span></footer>
+</body>
+</html>
