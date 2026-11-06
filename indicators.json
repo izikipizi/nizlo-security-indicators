@@ -1,12 +1,12 @@
 {
   "$schema": "./indicators.schema.json",
-  "schema_version": "1.0",
-  "dataset_version": "1.0.0",
-  "title": "Nizlo RMM security indicators for Windows",
+  "schema_version": "1.1",
+  "dataset_version": "1.1.0",
+  "title": "Nizlo RMM security indicators for Windows and macOS",
   "vendor": "Nizlo",
   "product": "Nizlo RMM",
-  "platform": "Windows",
-  "last_reviewed": "2026-11-02",
+  "platform": "Windows and macOS",
+  "last_reviewed": "2026-11-06",
   "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
   "notice": "Nizlo is legitimate RMM software. Presence alone is not evidence of compromise; verify tenant authorization, binary provenance, operator identity, audit context, and the action performed.",
   "expected_network_behavior": {
@@ -100,7 +100,35 @@
       "value": "app.nizlo.com:443",
       "context": "Expected outbound TCP 443 destination using HTTPS or authenticated WSS. No inbound firewall port is required.",
       "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
-      "last_reviewed": "2026-11-02"
+      "last_reviewed": "2026-11-06"
+    },
+    {
+      "type": "path",
+      "value": "/Library/PrivilegedHelperTools/com.nizlo.agent/Nizlo.Agent.Mac",
+      "context": "Expected macOS privileged-helper executable path for the authorized Nizlo agent.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
+    },
+    {
+      "type": "path",
+      "value": "/Applications/NizloRemote.app/Contents/MacOS/NizloRemote",
+      "context": "Expected macOS executable path for the authorized Nizlo remote-support client.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
+    },
+    {
+      "type": "service",
+      "value": "com.nizlo.NizloRemote_service",
+      "context": "Expected macOS launch daemon label for the authorized Nizlo remote-support service.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
+    },
+    {
+      "type": "service",
+      "value": "com.nizlo.NizloRemote_server",
+      "context": "Expected macOS launch agent label for the authorized Nizlo remote-support server.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
     }
   ]
 }

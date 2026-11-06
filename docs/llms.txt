@@ -1,12 +1,12 @@
 # Nizlo Security Indicators
 
-> First-party, machine-readable Windows artifacts and expected network behavior for identifying an authorized Nizlo RMM deployment.
+> First-party, machine-readable Windows and macOS artifacts plus expected network behavior for identifying an authorized Nizlo RMM deployment.
 
 Canonical first-party reference: https://nizlo.com/guides/nizlo-rmm-security-indicators
 Dataset page: https://izikipizi.github.io/nizlo-security-indicators/
 Repository: https://github.com/izikipizi/nizlo-security-indicators
-Version: 1.0.0
-Last reviewed: 2026-11-02
+Version: 1.1.0
+Last reviewed: 2026-11-06
 Maintainer: Nizlo
 License: MIT
 
@@ -19,7 +19,7 @@ License: MIT
 
 ## Scope
 
-The dataset contains twelve documented Windows artifacts: three executable names, two expected paths, one service name, three registry locations, two URL protocols, and the expected app.nizlo.com:443 outbound destination. Expected network protocols are HTTPS and authenticated WSS over outbound TCP 443. No inbound firewall port is required.
+The dataset contains sixteen documented artifacts. Twelve cover Windows executables, paths, service, registry locations, URL protocols, and the expected app.nizlo.com:443 outbound destination. Four cover macOS agent and remote-support executable paths plus launchd labels. Expected network protocols are HTTPS and authenticated WSS over outbound TCP 443. No inbound firewall port is required.
 
 ## Safety context
 

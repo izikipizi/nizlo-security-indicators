@@ -1,6 +1,6 @@
 # Nizlo security indicators
 
-First-party, machine-readable Windows artifacts and expected network behavior for identifying an authorized Nizlo RMM deployment.
+First-party, machine-readable Windows and macOS artifacts plus expected network behavior for identifying an authorized Nizlo RMM deployment.
 
 - [Human-readable reference](https://nizlo.com/guides/nizlo-rmm-security-indicators)
 - [Public dataset page](https://izikipizi.github.io/nizlo-security-indicators/)
@@ -28,6 +28,9 @@ The dataset covers:
 - Nizlo agent and URL-protocol registry locations
 - `nizlo:` and `nizlo-remote:` protocol handlers
 - `app.nizlo.com` over outbound TCP 443 using HTTPS or authenticated WSS; no inbound firewall port is required
+- `/Library/PrivilegedHelperTools/com.nizlo.agent/Nizlo.Agent.Mac`
+- `/Applications/NizloRemote.app/Contents/MacOS/NizloRemote`
+- `com.nizlo.NizloRemote_service` and `com.nizlo.NizloRemote_server` launchd labels
 
 ## Validate locally
 

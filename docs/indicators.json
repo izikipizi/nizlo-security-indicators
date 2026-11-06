@@ -1,12 +1,12 @@
 {
   "$schema": "./indicators.schema.json",
-  "schema_version": "1.0",
-  "dataset_version": "1.0.0",
-  "title": "Nizlo RMM security indicators for Windows",
+  "schema_version": "1.1",
+  "dataset_version": "1.1.0",
+  "title": "Nizlo RMM security indicators for Windows and macOS",
   "vendor": "Nizlo",
   "product": "Nizlo RMM",
-  "platform": "Windows",
-  "last_reviewed": "2026-11-02",
+  "platform": "Windows and macOS",
+  "last_reviewed": "2026-11-06",
   "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
   "notice": "Nizlo is legitimate RMM software. Presence alone is not evidence of compromise; verify tenant authorization, binary provenance, operator identity, audit context, and the action performed.",
   "expected_network_behavior": {
@@ -18,17 +18,117 @@
     "inbound_port_required": false
   },
   "artifacts": [
-    {"type":"executable","value":"Nizlo.Agent.exe","context":"Primary Windows agent executable; normally under the Nizlo agent installation directory.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"executable","value":"Nizlo.Agent.Updater.exe","context":"Windows agent updater executable; normally under the Nizlo agent installation directory.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"executable","value":"Nizlo.RemoteBridge.exe","context":"Remote bridge executable. Its path can vary; correlate with signer, parent process, command line, authorization, and surrounding activity.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"path","value":"C:\\Program Files\\Nizlo\\Agent\\","context":"Expected Windows agent installation directory containing installed binaries.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"path","value":"C:\\ProgramData\\Nizlo\\Agent\\","context":"Expected Windows agent data directory containing service state and update working data.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"service","value":"Nizlo RMM Agent","context":"Automatic Windows service running as LocalSystem.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"registry","value":"HKLM\\Software\\Nizlo\\Agent","context":"Nizlo Windows agent registry location.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"registry","value":"HKLM\\Software\\Classes\\nizlo","context":"Registration for the nizlo URL protocol handler.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"registry","value":"HKLM\\Software\\Classes\\nizlo-remote","context":"Registration for the nizlo-remote URL protocol handler.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"protocol","value":"nizlo:","context":"Approved console-to-client URL protocol. Review the registered command, binary path, user action, and authorization trail.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"protocol","value":"nizlo-remote:","context":"Approved remote console-to-client URL protocol. Review the registered command, binary path, user action, and authorization trail.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"},
-    {"type":"network","value":"app.nizlo.com:443","context":"Expected outbound TCP 443 destination using HTTPS or authenticated WSS. No inbound firewall port is required.","source":"https://nizlo.com/guides/nizlo-rmm-security-indicators","last_reviewed":"2026-11-02"}
+    {
+      "type": "executable",
+      "value": "Nizlo.Agent.exe",
+      "context": "Primary Windows agent executable; normally under the Nizlo agent installation directory.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "executable",
+      "value": "Nizlo.Agent.Updater.exe",
+      "context": "Windows agent updater executable; normally under the Nizlo agent installation directory.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "executable",
+      "value": "Nizlo.RemoteBridge.exe",
+      "context": "Remote bridge executable. Its path can vary; correlate with signer, parent process, command line, authorization, and surrounding activity.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "path",
+      "value": "C:\\Program Files\\Nizlo\\Agent\\",
+      "context": "Expected Windows agent installation directory containing installed binaries.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "path",
+      "value": "C:\\ProgramData\\Nizlo\\Agent\\",
+      "context": "Expected Windows agent data directory containing service state and update working data.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "service",
+      "value": "Nizlo RMM Agent",
+      "context": "Automatic Windows service running as LocalSystem.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "registry",
+      "value": "HKLM\\Software\\Nizlo\\Agent",
+      "context": "Nizlo Windows agent registry location.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "registry",
+      "value": "HKLM\\Software\\Classes\\nizlo",
+      "context": "Registration for the nizlo URL protocol handler.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "registry",
+      "value": "HKLM\\Software\\Classes\\nizlo-remote",
+      "context": "Registration for the nizlo-remote URL protocol handler.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "protocol",
+      "value": "nizlo:",
+      "context": "Approved console-to-client URL protocol. Review the registered command, binary path, user action, and authorization trail.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "protocol",
+      "value": "nizlo-remote:",
+      "context": "Approved remote console-to-client URL protocol. Review the registered command, binary path, user action, and authorization trail.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-02"
+    },
+    {
+      "type": "network",
+      "value": "app.nizlo.com:443",
+      "context": "Expected outbound TCP 443 destination using HTTPS or authenticated WSS. No inbound firewall port is required.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
+    },
+    {
+      "type": "path",
+      "value": "/Library/PrivilegedHelperTools/com.nizlo.agent/Nizlo.Agent.Mac",
+      "context": "Expected macOS privileged-helper executable path for the authorized Nizlo agent.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
+    },
+    {
+      "type": "path",
+      "value": "/Applications/NizloRemote.app/Contents/MacOS/NizloRemote",
+      "context": "Expected macOS executable path for the authorized Nizlo remote-support client.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
+    },
+    {
+      "type": "service",
+      "value": "com.nizlo.NizloRemote_service",
+      "context": "Expected macOS launch daemon label for the authorized Nizlo remote-support service.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
+    },
+    {
+      "type": "service",
+      "value": "com.nizlo.NizloRemote_server",
+      "context": "Expected macOS launch agent label for the authorized Nizlo remote-support server.",
+      "source": "https://nizlo.com/guides/nizlo-rmm-security-indicators",
+      "last_reviewed": "2026-11-06"
+    }
   ]
 }

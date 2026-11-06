@@ -15,6 +15,14 @@ const expectedValues = [
   "nizlo:",
   "nizlo-remote:",
   "app.nizlo.com:443",
+  "/Library/PrivilegedHelperTools/com.nizlo.agent/Nizlo.Agent.Mac",
+  "/Applications/NizloRemote.app/Contents/MacOS/NizloRemote",
+  "com.nizlo.NizloRemote_service",
+  "com.nizlo.NizloRemote_server",
+];
+const expectedPlatforms = [
+  ...Array(12).fill("Windows"),
+  ...Array(4).fill("macOS"),
 ];
 
 function parseCsv(text) {
@@ -69,8 +77,9 @@ const [jsonText, csvText, schemaText, page, docsJson, docsCsv, docsSchema, sitem
 
 const data = JSON.parse(jsonText);
 const schema = JSON.parse(schemaText);
-assert.equal(data.schema_version, "1.0");
-assert.equal(data.dataset_version, "1.0.0");
+assert.equal(data.schema_version, "1.1");
+assert.equal(data.dataset_version, "1.1.0");
+assert.equal(data.platform, "Windows and macOS");
 assert.equal(data.source, source);
 assert.equal(data.expected_network_behavior.destination, "app.nizlo.com");
 assert.equal(data.expected_network_behavior.port, 443);
@@ -80,7 +89,7 @@ assert.deepEqual(data.artifacts.map(({ value }) => value), expectedValues);
 assert.equal(new Set(data.artifacts.map(({ type, value }) => `${type}\u0000${value}`)).size, data.artifacts.length);
 for (const artifact of data.artifacts) {
   assert.equal(artifact.source, source);
-  assert.equal(artifact.last_reviewed, data.last_reviewed);
+  assert.match(artifact.last_reviewed, /^\d{4}-\d{2}-\d{2}$/);
   assert.ok(artifact.context.length >= 10);
 }
 assert.equal(schema.$id, "https://izikipizi.github.io/nizlo-security-indicators/indicators.schema.json");
@@ -89,11 +98,11 @@ const rows = parseCsv(csvText);
 assert.deepEqual(rows[0], ["type", "value", "platform", "context", "source", "last_reviewed"]);
 assert.equal(rows.length - 1, data.artifacts.length);
 assert.deepEqual(rows.slice(1).map((row) => row[1]), expectedValues);
-for (const row of rows.slice(1)) {
+assert.deepEqual(rows.slice(1).map((row) => row[2]), expectedPlatforms);
+for (const [index, row] of rows.slice(1).entries()) {
   assert.equal(row.length, 6);
-  assert.equal(row[2], "Windows");
   assert.equal(row[4], source);
-  assert.equal(row[5], data.last_reviewed);
+  assert.equal(row[5], data.artifacts[index].last_reviewed);
 }
 
 assert.deepEqual(JSON.parse(docsJson), data);

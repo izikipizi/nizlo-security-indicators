@@ -10,4 +10,8 @@ registry,HKLM\Software\Classes\nizlo,Windows,"Registration for the nizlo URL pro
 registry,HKLM\Software\Classes\nizlo-remote,Windows,"Registration for the nizlo-remote URL protocol handler.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
 protocol,nizlo:,Windows,"Approved console-to-client URL protocol. Review the registered command, binary path, user action, and authorization trail.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
 protocol,nizlo-remote:,Windows,"Approved remote console-to-client URL protocol. Review the registered command, binary path, user action, and authorization trail.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
-network,app.nizlo.com:443,Windows,"Expected outbound TCP 443 destination using HTTPS or authenticated WSS. No inbound firewall port is required.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-02
+network,app.nizlo.com:443,Windows,"Expected outbound TCP 443 destination using HTTPS or authenticated WSS. No inbound firewall port is required.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-06
+path,/Library/PrivilegedHelperTools/com.nizlo.agent/Nizlo.Agent.Mac,macOS,"Expected macOS privileged-helper executable path for the authorized Nizlo agent.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-06
+path,/Applications/NizloRemote.app/Contents/MacOS/NizloRemote,macOS,"Expected macOS executable path for the authorized Nizlo remote-support client.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-06
+service,com.nizlo.NizloRemote_service,macOS,"Expected macOS launch daemon label for the authorized Nizlo remote-support service.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-06
+service,com.nizlo.NizloRemote_server,macOS,"Expected macOS launch agent label for the authorized Nizlo remote-support server.",https://nizlo.com/guides/nizlo-rmm-security-indicators,2026-11-06

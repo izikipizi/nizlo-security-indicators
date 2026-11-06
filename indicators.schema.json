@@ -7,12 +7,12 @@
   "required": ["$schema", "schema_version", "dataset_version", "title", "vendor", "product", "platform", "last_reviewed", "source", "notice", "expected_network_behavior", "artifacts"],
   "properties": {
     "$schema": { "type": "string" },
-    "schema_version": { "const": "1.0" },
+    "schema_version": { "const": "1.1" },
     "dataset_version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
     "title": { "type": "string", "minLength": 1 },
     "vendor": { "const": "Nizlo" },
     "product": { "const": "Nizlo RMM" },
-    "platform": { "const": "Windows" },
+    "platform": { "const": "Windows and macOS" },
     "last_reviewed": { "type": "string", "format": "date" },
     "source": { "type": "string", "format": "uri" },
     "notice": { "type": "string", "minLength": 40 },
@@ -31,7 +31,7 @@
     },
     "artifacts": {
       "type": "array",
-      "minItems": 12,
+      "minItems": 16,
       "items": {
         "type": "object",
         "additionalProperties": false,
